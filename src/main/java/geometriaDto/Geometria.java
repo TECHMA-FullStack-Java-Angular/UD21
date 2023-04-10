@@ -20,28 +20,28 @@ public class Geometria {
 
 	//Métodos propios de clase Geometria
 	//metodo area del cuadrado
-	public static int areacuadrado(int n1){
+	public int areacuadrado(int n1){
 		return n1*n1;
 		}
 	
 	//metodo area del circulo
-	public static double areaCirculo(int r){
+	public double areaCirculo(int r){
 		final double PI=3.1416; 
 		return  PI * Math.pow(r,2);
 		}
 	
 	//metodo area del triangulo
-	public static int areatriangulo(int a, int b){
+	public int areatriangulo(int a, int b){
 		return (a*b)/2;
 		}
 	
 	//metodo area del rectangulo
-	public static int arearectangulo(int b , int h){
+	public int arearectangulo(int b , int h){
 		return b*h;
 		}
 	
 	//metodo area del rectangulo
-	public static int areapentagono(int p, int a){
+	public int areapentagono(int p, int a){
 		return (p*a) / 2;
 		}
 	

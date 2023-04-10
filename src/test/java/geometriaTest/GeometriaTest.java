@@ -2,22 +2,49 @@ package geometriaTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import geometriaDto.Geometria;
 
 class GeometriaTest {
 
+	Geometria geometria;
+	
+	@BeforeEach
+	public void before() {
+		geometria = new Geometria();
+	}
+	
+	@Test
+	void testGeometriaConstructor() {
+		geometria = new Geometria(1);
+		Geometria resultado = geometria;
+		assertEquals(1, resultado.getId());
+		assertEquals("cuadrado", resultado.getNom());
+		assertEquals(0.0, resultado.getArea());
+	}
+	
+	@Test
+	void testGeometriaConstructorVacio() {
+		geometria = new Geometria();
+		Geometria resultado = geometria;
+		assertEquals(9, resultado.getId());
+		assertEquals("Default", resultado.getNom());
+		assertEquals(0.0, resultado.getArea());
+	}
+	
+	@SuppressWarnings("static-access")
 	@Test
 	public void TestAreacuadrado() {
-		int resultado= Geometria.areacuadrado(2);
+		int resultado= geometria.areacuadrado(2);
 		int esperado= 4;
 		assertEquals(esperado, resultado);
 	}
 	
 	@Test
     public void TestAreaCirculo() {
-		double resultado = Geometria.areaCirculo(2);
+		double resultado = geometria.areaCirculo(2);
 		double esperado = 12.5664;
 		assertEquals(esperado, resultado);
 		
@@ -25,22 +52,50 @@ class GeometriaTest {
 	
 	@Test 
 	public void TestAreaTriangulo() {
-		int resultado = Geometria.areatriangulo(12,15);
+		int resultado = geometria.areatriangulo(12,15);
 		int esperado = 90;
 		assertEquals(esperado, resultado);
 	}
 	
 	@Test
 	public void TestAreaRectangulo() {
-		int resultado = Geometria.arearectangulo(5,10);
+		int resultado = geometria.arearectangulo(5,10);
 		int esperado = 50;
 		assertEquals(esperado, resultado);
 	}
 	
 	@Test
 	public void TestAreaPentagono() {
-		int resultado = Geometria.areapentagono(50,2);
+		int resultado = geometria.areapentagono(50,2);
 		int esperado = 50;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestAreaRombo() {
+		int resultado = geometria.arearombo(50,2);
+		int esperado = 50;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestAreaRomboide() {
+		int resultado = geometria.arearomboide(5,10);
+		int esperado = 50;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestAreaTrapecio() {
+		int resultado = geometria.areatrapecio(3,3,5);
+		int esperado = 15;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestFigura() {
+		String resultado = geometria.figura(1);
+		String esperado = "cuadrado";
 		assertEquals(esperado, resultado);
 	}
 
