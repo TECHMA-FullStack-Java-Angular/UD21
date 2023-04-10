@@ -1,4 +1,4 @@
-package geometriaDto;
+package geometria;
 
 public class Geometria {
 	

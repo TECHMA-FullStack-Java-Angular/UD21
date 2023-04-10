@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import geometriaDto.Geometria;
+import geometria.Geometria;
 
 class GeometriaTest {
 
@@ -102,9 +102,16 @@ class GeometriaTest {
 	
 	@Test
 	public void TestFigura() {
-		String resultado = geometria.figura(1);
-		String esperado = "cuadrado";
-		assertEquals(esperado, resultado);
+		
+		assertEquals("cuadrado", geometria.figura(1));
+		assertEquals("Circulo", geometria.figura(2));
+		assertEquals("Triangulo", geometria.figura(3));
+		assertEquals("Rectangulo", geometria.figura(4));
+		assertEquals("Pentagono", geometria.figura(5));
+		assertEquals("Rombo", geometria.figura(6));
+		assertEquals("Romboide", geometria.figura(7));
+		assertEquals("Trapecio", geometria.figura(8));
+		assertEquals("Default", geometria.figura(11));
 	}
 	
 	//Tests getters y setters

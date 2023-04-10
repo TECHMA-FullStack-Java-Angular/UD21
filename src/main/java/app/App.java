@@ -1,6 +1,6 @@
-package geometria;
+package app;
 
-import geometriaDto.Geometria;
+import geometria.Geometria;
 
 public class App 
 {
