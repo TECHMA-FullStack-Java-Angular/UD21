@@ -16,6 +16,8 @@ class GeometriaTest {
 		geometria = new Geometria();
 	}
 	
+	
+	//Test constructores
 	@Test
 	void testGeometriaConstructor() {
 		geometria = new Geometria(1);
@@ -34,6 +36,8 @@ class GeometriaTest {
 		assertEquals(0.0, resultado.getArea());
 	}
 	
+	
+	//Tests metodos
 	@SuppressWarnings("static-access")
 	@Test
 	public void TestAreacuadrado() {
@@ -96,6 +100,54 @@ class GeometriaTest {
 	public void TestFigura() {
 		String resultado = geometria.figura(1);
 		String esperado = "cuadrado";
+		assertEquals(esperado, resultado);
+	}
+	
+	//Tests getters y setters
+	@Test
+	public void TestGetId() {
+		int resultado = geometria.getId();
+		int esperado = 9;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestSetId() {
+		geometria.setId(10);
+		int resultado = geometria.getId();
+		int esperado = 10;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestGetNom() {
+		
+		String resultado = geometria.getNom();
+		String esperado = "Default";
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestSetNom() {
+		geometria.setNom("prueba");
+		String resultado = geometria.getNom();
+		String esperado = "prueba";
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestGetArea() {
+		
+		double resultado = geometria.getArea();
+		double esperado = 0.0;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestSetArea() {
+		geometria.setArea(15);
+		double resultado = geometria.getArea();
+		double esperado = 15;
 		assertEquals(esperado, resultado);
 	}
 
