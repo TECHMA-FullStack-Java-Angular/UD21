@@ -20,25 +20,29 @@ class GeometriaTest {
 	//Test constructores
 	@Test
 	void testGeometriaConstructor() {
-		geometria = new Geometria(1);
+		geometria = new Geometria(1); //constructor con argumento
 		Geometria resultado = geometria;
-		assertEquals(1, resultado.getId());
-		assertEquals("cuadrado", resultado.getNom());
-		assertEquals(0.0, resultado.getArea());
+		assertEquals(1, resultado.getId());//prueba id
+		assertEquals("cuadrado", resultado.getNom());//prueba nombre
+		assertEquals(0.0, resultado.getArea());//prueba area con valor por defecto
 	}
 	
 	@Test
-	void testGeometriaConstructorVacio() {
-		geometria = new Geometria();
+	void testGeometriaConstructorVacio() { 
+		geometria = new Geometria();//constructor vacio
 		Geometria resultado = geometria;
+		//valores por defecto de id, nombre y area
 		assertEquals(9, resultado.getId());
 		assertEquals("Default", resultado.getNom());
 		assertEquals(0.0, resultado.getArea());
 	}
 	
 	
-	//Tests metodos
+	
 	@SuppressWarnings("static-access")
+	
+	//Tests metodos
+	
 	@Test
 	public void TestAreacuadrado() {
 		int resultado= geometria.areacuadrado(2);
@@ -148,6 +152,14 @@ class GeometriaTest {
 		geometria.setArea(15);
 		double resultado = geometria.getArea();
 		double esperado = 15;
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	public void TestToString() {
+		
+		String resultado = geometria.toString();
+		String esperado = "Geometria [id=9, nom=Default, area=0.0]";
 		assertEquals(esperado, resultado);
 	}
 
